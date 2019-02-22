@@ -1,0 +1,50 @@
+{
+  "name": "stateless-captcha",
+  "version": "0.0.1",
+  "description": "Node module to handle rendering and validating captcha's in stateless fashion.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test nyc mocha",
+    "deploy": "np",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binaryops-wiebo/stateless-captcha.git"
+  },
+  "keywords": [
+    "captcha",
+    "api",
+    "stateless",
+    "express",
+    "restify"
+  ],
+  "author": "Wiebo Troost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binaryops-wiebo/stateless-captcha/issues"
+  },
+  "homepage": "https://github.com/binaryops-wiebo/stateless-captcha#readme",
+  "dependencies": {
+    "arraybuffer-to-buffer": "0.0.5",
+    "jsonwebtoken": "^8.5.0",
+    "lame": "^1.2.4",
+    "streamifier": "^0.1.1",
+    "svg-captcha": "^1.3.12",
+    "text2wav": "0.0.13",
+    "wav": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.1.1",
+    "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.3.0",
+    "shelljs": "^0.7.8",
+    "sinon": "^4.1.1"
+  }
+}
