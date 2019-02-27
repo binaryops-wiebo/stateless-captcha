@@ -35,20 +35,20 @@ describe('stateless-captcha', function () {
 
     });
 
-    it('can verify a captcha', function () {
-        const dummyOptions = {};
-        const captchaHandler = captcHandle(dummyOptions);
+    // it('can verify a captcha', function () {
+    //     const dummyOptions = {};
+    //     const captchaHandler = captcHandle(dummyOptions);
 
-        const ret1 = captchaHandler.verifyCaptcha(preDefined);
-        expect(ret1).to.be.an.instanceof(Object);
-        expect(ret1.valid).to.be.true;
-        expect(ret1.jwt).to.be.a('string');
+    //     const ret1 = captchaHandler.verifyCaptcha(preDefined);
+    //     expect(ret1).to.be.an.instanceof(Object);
+    //     expect(ret1.valid).to.be.true;
+    //     expect(ret1.jwt).to.be.a('string');
 
-        const ret2 = captchaHandler.verifyJWTResponse(ret1.jwt, preDefined.nonce);
-        expect(ret2).to.be.an.instanceOf(Object);
-        expect(ret2.valid).to.be.true;
+    //     const ret2 = captchaHandler.verifyJWTResponse(ret1.jwt, preDefined.nonce);
+    //     expect(ret2).to.be.an.instanceOf(Object);
+    //     expect(ret2.valid).to.be.true;
 
-    });
+    // });
 
     it('can create audio for a captcha', function (done) {
         const dummyOptions = {};
