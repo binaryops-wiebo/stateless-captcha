@@ -1,5 +1,20 @@
 # stateless-captcha
 Node module to easily implement stateless captcha rendering and validations, for use in express and restify.
+You can easily define the three routes needed to support a captcha protected function in your applications
+
+<pre>
+app.post('/captcha', captchaHandler.getCaptcha);
+app.post('/captcha/verify', captchaHandler.verifyCaptcha);
+app.post('/captcha/audio', captchaHandler.getCaptchaAudio);
+</pre>
+
+and finally your captcha protected route with middleware
+
+<pre>
+app.get('/', captchaHandler.verifyJWTResponseMiddleware, (req, res) =>
+    res.send('Hello There! You must have entered a valid Captcha response')
+);
+</pre>
 
 # Overview
 This module provides functionality to add 3 routes and 1 middleware function to your restify or express application.
