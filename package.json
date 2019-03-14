@@ -43,6 +43,7 @@
     "cross-env": "^5.1.1",
     "mocha": "^4.0.1",
     "mocha-lcov-reporter": "^1.3.0",
+    "np": "^4.0.2",
     "nyc": "^13.3.0",
     "prettier": "^1.16.4",
     "shelljs": "^0.7.8",
