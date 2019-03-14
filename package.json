@@ -1,6 +1,6 @@
 {
   "name": "stateless-captcha",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node module to handle rendering and validating a captcha in stateless fashion.",
   "main": "index.js",
   "directories": {
