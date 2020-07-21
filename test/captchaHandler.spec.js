@@ -50,24 +50,5 @@ describe('stateless-captcha', function () {
 
     // });
 
-    it('can create audio for a captcha', function (done) {
-        const dummyOptions = {};
-        const captchaHandler = captcHandle(dummyOptions);
-
-        var wrapper = captchaHandler.createCaptcha('1234');
-
-        // expect(wrapper.validation).to.be.a('string');
-        // expect(wrapper.captcha).to.be.an.instanceof(Object);
-        // expect(wrapper.captcha.data).to.be.a('string');
-
-        captchaHandler.getAudio(wrapper).then(value => {
-            expect(value).to.be.an.instanceOf(Object);
-             expect(value.audio).to.be.a('string');
-            done();
-        })
-
-    });    
-
-
-
+    
 });

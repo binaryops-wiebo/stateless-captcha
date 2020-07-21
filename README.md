@@ -5,7 +5,6 @@ You can easily define the three routes needed to support a captcha protected fun
 <pre>
 app.post('/captcha', captchaHandler.getCaptcha);
 app.post('/captcha/verify', captchaHandler.verifyCaptcha);
-app.post('/captcha/audio', captchaHandler.getCaptchaAudio);
 </pre>
 
 and finally your captcha protected route with middleware
@@ -22,7 +21,6 @@ This module provides functionality to add 3 routes and 1 middleware function to 
 1. Get the Captcha. This returns the Captcha svg that you can render on your front end. It also includes an encrypted validation string.
 2. Verify the Captcha. Your front end supplies the answer your user typed in, along with the validation string from step 1. It returns an object indicating whether the response was correct. If it as correct, you also receive a jwt token in the response.
 3. use the middleware on the captcha secured route (the submit), and pass the jwt token in a request header. If the token is invalid then the request will fail with a 401.
-4. get audio for the current captcha, returns a playable mp3 of the spoken content of the captcha.
 
 <pre>
 const express = require('express');
@@ -87,23 +85,6 @@ app.post('/captcha/verify', captchaHandler.verifyCaptcha);
 app.get('/', captchaHandler.verifyJWTResponseMiddleware, (req, res) =>
     res.send('Hello There! You must have entered a valid Captcha response')
 );
-
-/**
- * The user may wish to listen to the captcha, rather than trying to read it
- * This method returns an MP3 encoded audio clip that you plan play on the client 
- * Submit: an object with the nonce, and the validation string.
- * {
- *     nonce: '1223dsfdres-434-dd',
- *     validation: "ksafrp348573pfsldkfjlj.............."
- * };
- * 
- * the returned object
- * {
- *   "audio": "data:audio/mp3;base64,//NAxAAAAANIAAAAAPGANnlgXPAYEJ+JgAAk/B2...."
- * }
- */
-app.post('/captcha/audio', captchaHandler.getCaptchaAudio);
-
 
 
 // start the app !!
